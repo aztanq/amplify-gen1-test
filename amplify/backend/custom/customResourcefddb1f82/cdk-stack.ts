@@ -13,9 +13,9 @@ export class cdkStack extends cdk.Stack {
       description: 'Current Amplify CLI env name',
     });
 
-    // Add custom S3 bucket
-    new s3.Bucket(this, 'CustomGen1Bucket', {
-      bucketName: `amplify-gen1-custom-v2-${cdk.Stack.of(this).account}`,
+    // Add custom S3 bucket - will be created by Amplify Console
+    new s3.Bucket(this, 'CustomGen1BucketConsole', {
+      bucketName: `amplify-gen1-console-${cdk.Stack.of(this).account}`,
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
